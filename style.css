@@ -4,9 +4,6 @@ body {
   font-family: 'Quicksand';
   height: 100vh;
 }
-/* .home-underline {
-  text-decoration: underline;
-} */
 .header{
   background-color: rgb(17, 17, 17);
   color: white;
@@ -32,7 +29,7 @@ li {
   margin: 0px 25px 0px 25px;
   position: relative;
 }
-a {
+.nav-style {
   text-decoration: none;
   color: white;
   display: block;
@@ -40,16 +37,23 @@ a {
   font-size: 18px;
   font-family: 'Quicksand';
 }
-a:hover {
+.nav-style:hover {
   background-color: #ad0e33;
   border-radius: 5px;
   transform: scale(1.1);
   transition: all 0.5s ease;
 }
-a:active{
+.nav-style:active{
   opacity: 50%;
   transform: scale(1.0);
   background-color: #c70e39;
+}
+.home-hl {
+  text-decoration: underline #ad0e33 3px;
+  text-underline-offset: 7px;
+}
+.home-hl:hover {
+  text-decoration: none;
 }
 .hamburger {
   display: none;
@@ -79,6 +83,22 @@ a:active{
   cursor: pointer;
 }
 
+.social-icons a,
+.social-icons img {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  margin-bottom: 10px;
+}
+.social-icons a:hover img,
+.social-icons a:focus img {
+  transform: translateY(-3px) scale(1.0);
+  opacity: 0.95;
+}
+.social-icons:hover {
+  cursor: pointer;
+}
 @media screen and (max-width: 830px) {
   .hamburger {
     display: flex;
@@ -95,6 +115,7 @@ a:active{
     flex-direction: column;
     padding: 20px;
     transition: 0.3s;
+    color: white;
   }
 
   .nav-menu.active {
@@ -114,8 +135,8 @@ a:active{
 .intro-greetings {
   font-family: 'Quicksand';
   font-size: 40px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   text-align: justify;
 }
 .name-highlight {
@@ -124,16 +145,24 @@ a:active{
 .profile-container{
   /* background-color: gray; */
   padding: 10px;
-  margin: 40px 0px 0px 0px;
-  width: 50%;
+  margin: 40px 0 0 0;
+  width: auto; /* size to content */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .jem-profile {
-  width: 70%;
+  width: 360px;
+  max-width: 100%;
   display: block;
-  /* margin: auto; */
+}
+.jem-profile:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: all 0.8s ease;
+  border-radius: 200%;
+  box-shadow: 0px 0px 20px #ad0e33;
+  /* transform: translateX(-70px); */
 }
 .body-container {
   display: flex;
@@ -141,17 +170,18 @@ a:active{
   max-width: 100%;
   height: 100%;
   justify-content: space-between;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
   height: 80%;
 }
+a, h4.view-project {
+  text-decoration: none;
+}
 .view-project {
-  /* background-color: #ad0e33; */
-  /* padding: 5px 10px 5px 10px; */
   border-radius: 5px;
   color: #000000;
-  display: inline-block;
-  width: 50%;
+  display: block;
+  width: 22%;
   text-align: justify;
   font-size: 1.0em;
   margin: 0px 0px;
@@ -160,11 +190,12 @@ a:active{
 
 .view-project:hover {
   cursor: pointer;
-  color: #ad0e33;;
+  color: #ad0e33;
   /* background-color: #ad0e33; */
   transform: translateX(5px);
   /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
 }
+
 @media screen and (max-width: 830px) {
   .body-container {
     flex-direction: column-reverse;
@@ -182,13 +213,23 @@ a:active{
 
   .profile-container {
     padding: 10px;
+    justify-content: center;
   }
 
   .jem-profile {
     width: 90%;
-    max-width: 350px;
+    max-width: 300px;
     margin: 0px;
   }
+
+  .jem-profile:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: all 0.8s ease;
+  border-radius: 200%;
+  box-shadow: 0px 0px 10px #ad0e33;
+  /* transform: translateX(-20px); */
+}
 
   .intro-container {
     padding: 0px;

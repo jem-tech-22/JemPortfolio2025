@@ -1,0 +1,7 @@
+.projects-hl {
+  text-decoration: underline #ad0e33 3px;
+  text-underline-offset: 7px;
+}
+.projects-hl:hover {
+  text-decoration: none;
+}

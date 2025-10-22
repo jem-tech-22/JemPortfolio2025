@@ -1,0 +1,7 @@
+.skills-hl {
+  text-decoration: underline #ad0e33 3px;
+  text-underline-offset: 7px;
+}
+.skills-hl:hover {
+  text-decoration: none;
+}
