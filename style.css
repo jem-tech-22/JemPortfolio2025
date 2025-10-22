@@ -2,7 +2,7 @@ body {
   padding: 0px;
   margin: 0px;
   font-family: 'Quicksand';
-  height: 100vh;
+  height: 100%;
 }
 .header{
   background-color: rgb(17, 17, 17);
@@ -13,6 +13,8 @@ body {
   justify-content: space-between;
   align-items: center;
   height: 100%;
+  position: relative;
+  z-index: 1000; /* Match nav-menu z-index */
 }
 .header h1 {
   margin: 0;
@@ -49,8 +51,10 @@ li {
   background-color: #c70e39;
 }
 .home-hl {
-  text-decoration: underline #ad0e33 3px;
+  text-decoration: underline #ad0e33 5px;
   text-underline-offset: 7px;
+  text-underline-offset: 7px;
+  transition: 0.5s;
 }
 .home-hl:hover {
   text-decoration: none;
@@ -59,7 +63,7 @@ li {
   display: none;
   cursor: pointer;
   padding: 5px;
-  z-index: 100;
+  z-index: 1001; /* Slightly higher than header and nav-menu to ensure clickability */
 }
 .burger-menu {
   width: 20px;
@@ -89,7 +93,7 @@ li {
   width: 28px;
   height: 28px;
   transition: transform 0.2s ease, opacity 0.2s ease;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 }
 .social-icons a:hover img,
 .social-icons a:focus img {
@@ -107,7 +111,7 @@ li {
   .nav-menu {
     display: none;
     position: fixed;
-    top: 84px;
+    top: 88px;
     right: -100%;
     width: 50%;
     height: 100vh;
@@ -116,6 +120,7 @@ li {
     padding: 20px;
     transition: 0.3s;
     color: white;
+    z-index: 1000; /* Add high z-index to ensure menu appears on top */
   }
 
   .nav-menu.active {
@@ -129,41 +134,94 @@ li {
 }
 .intro-container{
   /* background-color: gray; */
+  /* margin-top: 15px; */
   padding: 10px;
   width: 50%;
 }
 .intro-greetings {
   font-family: 'Quicksand';
-  font-size: 40px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  font-size: 35px;
+  margin-top: 30px;
+  margin-bottom: 30px;
   text-align: justify;
 }
-.name-highlight {
+.text-highlight {
   color: #ad0e33;
 }
-.profile-container{
-  /* background-color: gray; */
+.profile-container {
   padding: 10px;
-  margin: 40px 0 0 0;
-  width: auto; /* size to content */
+  margin: 30px 0 0 0;
+  width: auto;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+.profile-wrapper {
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+}
+
+.profile-wrapper:hover {
+  transform: translateY(-5px);
+}
+
 .jem-profile {
   width: 360px;
   max-width: 100%;
   display: block;
+  transition: opacity 0.3s ease;
 }
-.jem-profile:hover {
+
+.profile-wrapper:hover .jem-profile {
+  opacity: 0.5;
+}
+
+.profile-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.profile-wrapper:hover .profile-overlay {
+  opacity: 1;
+}
+.profile-name {
+  color: #ffffff;
+  background-color: #ad0e33;
+  border-radius: 5px;
+  padding: 5px 40px 5px 40px;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: 'Quicksand';
+}
+.profile-name:hover {
+  background-color: #6d021b;
+  transition: 0.3s;
+  box-shadow: 0px 0px 20px #ffffff;
+}
+.profile-name:active {
+  background-color: #c70e39;
+  transition: 0.3s;
+}
+/* .jem-profile:hover {
   cursor: pointer;
   transform: scale(1.1);
   transition: all 0.8s ease;
   border-radius: 200%;
   box-shadow: 0px 0px 20px #ad0e33;
-  /* transform: translateX(-70px); */
-}
+  transform: translateX(-70px);
+} */
 .body-container {
   display: flex;
   align-items: center;
@@ -172,19 +230,20 @@ li {
   justify-content: space-between;
   padding-left: 30px;
   padding-right: 30px;
-  height: 80%;
+  background-color: rgb(253, 245, 245);
 }
-a, h4.view-project {
+a, p.view-project {
   text-decoration: none;
 }
 .view-project {
-  border-radius: 5px;
+  /* border-radius: 5px; */
   color: #000000;
   display: block;
-  width: 22%;
+  width: 50%;
   text-align: justify;
-  font-size: 1.0em;
-  margin: 0px 0px;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0px 0px 0px 0px;
   transition: all 0.3s ease;
 }
 
@@ -200,7 +259,7 @@ a, h4.view-project {
   .body-container {
     flex-direction: column-reverse;
     align-items: center;
-    padding: 20px;
+    padding: 30px;
     gap: 10px;
     height: auto;
   }
@@ -212,27 +271,36 @@ a, h4.view-project {
   }
 
   .profile-container {
+    margin-top: 10px;
     padding: 10px;
     justify-content: center;
   }
 
-  .jem-profile {
+  .profile-wrapper {
     width: 90%;
     max-width: 300px;
-    margin: 0px;
   }
 
-  .jem-profile:hover {
+  .jem-profile {
+    width: 100%;
+    margin: 0;
+  }
+
+  .profile-name {
+    font-size: 18px;
+  }
+
+  /* .jem-profile:hover {
   cursor: pointer;
   transform: scale(1.1);
   transition: all 0.8s ease;
   border-radius: 200%;
   box-shadow: 0px 0px 10px #ad0e33;
-  /* transform: translateX(-20px); */
-}
+} */
 
   .intro-container {
     padding: 0px;
+    /* margin-top: 30px; */
   }
 
   .intro-greetings {
@@ -252,4 +320,34 @@ a, h4.view-project {
 }
 .software-developer {
   color: #ad0e33;
+}
+
+/* Page transition animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+/* Delay classes for staggered animations */
+.delay-1 {
+  animation-delay: 0.2s;
+}
+
+.delay-2 {
+  animation-delay: 0.4s;
+}
+
+.delay-3 {
+  animation-delay: 0.6s;
 }

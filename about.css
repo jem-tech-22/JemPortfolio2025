@@ -1,7 +1,183 @@
+body {
+  padding: 0px;
+  margin: 0px;
+  font-family: 'Quicksand';
+  height: 100vh;
+  background-color: rgb(253, 245, 245);
+}
 .about-hl {
-  text-decoration: underline #ad0e33 3px;
+  text-decoration: underline #ad0e33 5px;
   text-underline-offset: 7px;
+  transition: 0.5s;
 }
 .about-hl:hover {
   text-decoration: none;
+
+}
+.body-container-about {
+  display: flex;
+  align-items: start;
+  max-width: 100%;
+  height: auto;
+  padding: 30px;
+  /* justify-content: space-between; */
+  /* padding-left: 30px;
+  padding-right: 30px; */
+}
+@media screen and (max-width: 830px) {
+  .body-container-about {
+    flex-direction: column;
+    align-items: center;
+    padding: 45px;
+    padding-top: 0px;
+    gap: 20px;
+    height: auto;
+  }
+
+  /* .about-description-container,
+  .profile-container-about {
+    width: 100%;
+    margin: 0;
+  } */
+
+  /* .profile-container-about {
+    margin-top: 10px;
+    padding: 10px;
+    justify-content: center;
+  } */
+
+  /* .jem-profile-about {
+    width: 90%;
+    max-width: 300px;
+    margin: 0px;
+  } */
+
+  .about-description {
+    font-size: 16px;
+    text-align: justify;
+  }
+
+  .about-description-container {
+    padding: 10px;
+    margin: 15px 15px 15px 15px;
+    width: 100%;
+  }
+  /* Make the two columns stack on mobile */
+  .experience-and-education {
+    flex-direction: column;
+    gap: 8px;
+    align-items: stretch;
+    /* text-align: justify; */
+  }
+
+  .work-experience-container,
+  .education-container {
+    width: 100%;
+  }
+
+  .experience, .education {
+    font-size: 28px;
+  }
+}
+.profile-container-about {
+  /* background-color: gray; */
+  /* padding: 10px; */
+  /* margin: 50px 0 0 0; */
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* .jem-profile-about {
+  width: 360px;
+  max-width: 100%;
+  display: block;
+} */
+.about-description {
+  font-family: 'Quicksand';
+  font-size: 18px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  text-align: justify;
+}
+.about-description-container {
+  /* background-color: gray; */
+  margin: 0px 15px 0px 15px;
+  width: 100%;
+}
+.experience-and-education {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  margin-top: 50px;
+}
+.work-experience-container,
+.education-container {
+  width: 100%;
+  flex: 1 1 0;
+  min-width: 220px;
+  margin: 10px 0 30px;
+}
+.education {
+  color: #ad0e33;
+  font-size: 35px;
+  margin: 0 0 10px 0;
+  display: inline-block;
+}
+.education:hover {
+  cursor: pointer;
+  transform: translateX(4px);
+  transition: 0.5s;
+}
+.education-item {
+  font-size: 18px;
+  margin: 0 0 0px 0;
+}
+.about-title {
+  color: #ad0e33;
+  font-size: 35px;
+  margin: 0px;
+  display: inline-block;
+}
+.about-title:hover{
+  cursor: pointer;
+  transform: translateX(4px);
+  transition: 0.5s;
+}
+.hobbies-container {
+  margin-top: 20px;
+  padding: 0px 0;
+}
+.hobbies-title {
+  color: #ad0e33;
+  font-size: 35px;
+  margin: 40px 0px 10px 0px;
+}
+.hobbies-title:hover {
+  cursor: pointer;
+  transform: translateX(4px);
+  transition: 0.5s;
+}
+.hobby-item {
+  font-size: 18px;
+  margin: 0px 0;
+}
+.experience {
+  color: #ad0e33;
+  font-size: 35px;
+  margin: 0px 0px 10px 0px;
+  display: inline-block;
+}
+.experience:hover{
+  cursor: pointer;
+  transform: translateX(4px);
+  transition: 0.5s;
+}
+.work-experience {
+  font-size: 18px;
+  margin: 0px;
+}
+.work-company {
+  font-size: 18px;
+  margin: 0px;
 }
