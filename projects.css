@@ -1,3 +1,9 @@
+body {
+  padding: 0px;
+  margin: 0px;
+  font-family: 'Quicksand';
+  height: 100%;
+}
 .projects-hl {
   text-decoration: underline #ad0e33 5px;
   text-underline-offset: 7px;
