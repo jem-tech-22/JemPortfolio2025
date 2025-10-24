@@ -112,8 +112,8 @@ body {
   }
 }
 
-.modal {
-  display: none; /* Hidden by default */
+/* .modal {
+  display: none;
   position: fixed;
   z-index: 999;
   padding-top: 80px;
@@ -143,4 +143,4 @@ body {
 
 .close:hover {
   color: #ccc;
-}
+} */
